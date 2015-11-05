@@ -1,0 +1,52 @@
+<ion-view title="Payment History" hide-back-button="true"> <ion-nav-buttons
+	side="left">
+<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+</ion-nav-buttons> 
+<ion-content has-header="true" padding="true">
+<div class="card" ng-show="errorBlockShow">
+	<div class="item item-text-wrap">
+		<ul>
+			<ol class="errMsg" ng-repeat="err in errorMsg">
+				{{err.msg}}
+				</li>
+		</ul>
+	</div>
+</div>
+<ul class="list">
+	<li class="item" ng-repeat="payment in paymentHistory">
+		<div class="row">
+	      	<div class="col tab_col">
+				  <div class="tab_pay_label">Transaction Id:</div>
+				  <div class="tab_value">{{payment.transaction_id}}</div>
+			</div>
+		</div>
+		<div class="row">
+	      	<div class="col tab_col">
+				  <div class="tab_pay_label">Transaction Date:</div>
+				  <div class="tab_value">{{payment.transaction_date}}</div>
+			</div>
+		</div>
+		<div class="row">
+	      	<div class="col tab_col">
+				  <div class="tab_pay_label">Payment Mode:</div>
+				  <div class="tab_value">{{payment.payment_mode}}</div>
+			</div>
+		</div>
+		<div class="row">
+	      	<div class="col tab_col">
+				  <div class="tab_pay_label">Status:</div>
+				  <div class="tab_value">{{payment.paymentstatus}}</div>
+			</div>
+		</div>
+		<div class="row">
+	      	<div class="col tab_col">
+				  <div class="tab_pay_label">Amount Paid:</div>
+				  <div class="tab_value">{{payment.amountpaid}}</div>
+			</div>
+		</div>
+	</li>
+	<li class="item" ng-if="paymentHistory.length == 0">
+		<div class="col no_record">No record to display</div>
+	</li>
+ </ul>
+</ion-content>

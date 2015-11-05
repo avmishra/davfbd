@@ -1,0 +1,82 @@
+<ion-side-menus>
+    <ion-pane ion-side-menu-content>
+        <ion-nav-bar class="bar-royal">
+            <ion-nav-back-button class="button-clear">
+                <i class="icon ion-ios7-arrow-left"></i> Back
+            </ion-nav-back-button>
+        </ion-nav-bar>
+        <ion-nav-view name=studentContent></ion-nav-view>
+    </ion-pane>
+    <ion-side-menu side="left">
+        <header class="bar bar-header bar-balanced">
+        	<span ng-if="userName != ''">
+           		<h1 class="title">{{userName}}</h1>
+           	</span>
+           	<span ng-if="userName == ''">
+           		<h1 class="title">DAV Fbd</h1>
+           	</span>
+        </header>
+        <ion-content class="has-header">
+            <ion-list>
+                <ion-item item-type="item-icon-left" nav-clear menu-close ui-sref="app.login" ng-hide="logged_in">
+                    <i class="icon ion-locked custom-icon"></i>
+                    &nbsp;&nbsp;Login
+                </ion-item>
+                <ion-item item-type="item-icon-left" nav-clear menu-close ui-sref="app.profile" ng-show="logged_in">
+                    <i class="icon ion-person custom-icon"></i>
+                    &nbsp;&nbsp;Profile
+                </ion-item>
+                <ion-item item-type="item-icon-left" nav-clear menu-close ui-sref="app.fees" ng-show="logged_in">
+                    <i class="icon ion-cash custom-icon"></i>
+                    &nbsp;&nbsp;Fees
+                </ion-item>
+                <ion-item item-type="item-icon-left" nav-clear menu-close ui-sref="app.paymenthistory" ng-show="logged_in">
+                    <i class="icon ion-pricetags custom-icon"></i>
+                    &nbsp;&nbsp;Payment History
+                </ion-item>
+                <ion-item item-type="item-icon-left" nav-clear menu-close ui-sref="app.commemail" ng-show="logged_in">
+                    <i class="icon ion-email custom-icon"></i>
+                    &nbsp;&nbsp;Communication Email
+                </ion-item>
+                <ion-item item-type="item-icon-left" nav-clear menu-close ui-sref="app.commsms" ng-show="logged_in">
+                    <i class="icon ion-chatbubble-working custom-icon"></i>
+                    &nbsp;&nbsp;Communication SMS
+                </ion-item>
+                <ion-item item-type="item-icon-left" nav-clear menu-close ui-sref="app.timetable" ng-show="logged_in">
+                    <i class="icon ion-clipboard custom-icon"></i>
+                    &nbsp;&nbsp;Time Table
+                </ion-item>
+                <ion-item item-type="item-icon-left" nav-clear menu-close ui-sref="app.docs" ng-show="logged_in">
+                    <i class="icon ion-document-text custom-icon"></i>
+                    &nbsp;&nbsp;Supporting Documents
+                </ion-item>
+                <ion-item item-type="item-icon-left" nav-clear menu-close ui-sref="app.changepassword" ng-show="0">
+                    <i class="icon ion-locked custom-icon"></i>
+                    &nbsp;&nbsp;Change password
+                </ion-item>
+                <ion-item item-type="item-icon-left" nav-clear menu-close ng-click="exitApp()">
+                    <i class="icon ion-power custom-icon"></i>
+                    &nbsp;&nbsp;<span class="exit">Exit</span>
+                </ion-item>
+                
+                <div class="item item-divider">
+                   &nbsp;
+                </div>
+                
+                <ion-item item-type="item-icon-left" nav-clear menu-close ui-sref="app.aboutus">
+                    <i class="icon ion-social-angular custom-icon"></i>
+                    &nbsp;&nbsp;About Us
+                </ion-item>
+                <ion-item item-type="item-icon-left" nav-clear menu-close ui-sref="app.social">
+                    <i class="icon ion-social-facebook custom-icon"></i>
+                    &nbsp;&nbsp;Social Connection
+                </ion-item>
+                
+                <ion-item item-type="item-icon-left" nav-clear menu-close ng-click="showConfirm()" ng-show="logged_in">
+	                <i class="icon ion-log-out custom-icon"></i>
+	                &nbsp;&nbsp;<span class="logout">Logout</span>
+	            </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

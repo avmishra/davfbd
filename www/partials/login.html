@@ -1,0 +1,50 @@
+<ion-view title="Login Page" hide-back-button="true">
+
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+
+    <ion-content has-header="true" padding="true">
+	    <div class="card" ng-show="errorBlockShow" >
+		    <div class="item item-text-wrap">
+			    <ul>
+			    	<ol class="errMsg" ng-repeat="err in errorMsg">{{err.msg}}</li>
+			    </ul>
+		    </div>
+	    </div>
+        <form name="userFrm" novalidate ng-submit="userLogin(userFrm)">
+            <div class="list">
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Roll No</span>
+                    <input required type="text" placeholder="Please enter your roll no." name="email" id="email" ng-model="userForm.email">
+                    <div class="error-container" ng-show="userFrm.email.$invalid && submitted">
+	                    <small class="error" ng-show="userFrm.email.$error.required">
+	                        Roll no is required.
+	                    </small>
+	                </div>
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Password</span>
+                    <input required type="password" placeholder="Please enter your password" name="password" ng-model="userForm.password" id="password">
+                    <div class="error-container" ng-show="userFrm.password.$invalid && submitted">
+                        <small class="error" ng-show="userFrm.password.$error.required">
+                            Password is required.
+                        </small>
+                    </div>
+                </label>
+                <div class="button-bar">
+                    <button type="submit" class="button button-block button-balanced">
+                    <i class="icon ion-unlocked"></i>&nbsp;&nbsp;&nbsp;	Login
+                    </button>
+                </div>
+            </div>
+        </form>
+         <br/>
+         <br/>
+         <!-- 
+        <button ui-sref="app.forgotpassword" class="button button-full button-assertive">
+            Forgot Password?
+        </button> -->
+    </ion-content>
+
+</ion-view>

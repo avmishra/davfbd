@@ -1,0 +1,455 @@
+<ion-view title="Profile" hide-back-button="true"> 
+<ion-nav-buttons side="left">
+	<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+</ion-nav-buttons> 
+<div class="card" ng-show="errorBlockShow" >
+    <div class="item item-text-wrap">
+	    <ul>
+	    	<ol class="errMsg" ng-repeat="err in errorMsg">{{err.msg}}</li>
+	    </ul>
+    </div>
+</div>
+
+<ion-tabs class="tabs-icon-top">
+	<ion-tab title="Personal" icon="icon ion-person">
+		<ion-content has-header="false" padding="true">
+			<ul class="list">
+				<li class="item">
+			      	<div class="row">
+						  <div class="col">
+						  	<img class="profile_img" src="http://davfbdcampus.in{{userDetails.basic.image_path}}/{{userDetails.basic.image_name}}">
+						  </div>
+						  <div class="col">
+						  	<img class="profile_signature" src="http://davfbdcampus.in/{{userDetails.basic.signature_path}}/{{userDetails.basic.signature}}">
+						  </div>
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+					  <div class="col">
+					  	<div class="col_label">Name:</div>
+					  	<div class="col_value">{{userDetails.basic.student_name}}</div>
+					  </div>
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+						<div class="col">
+						  	<div class="col_label">Date of Birth:</div>
+						  	<div class="col_value">{{userDetails.basic.date_of_birth}}</div>
+					  	</div>
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+					  <div class="col">
+					  	<div class="col_label">Email:</div>
+					  	<div class="col_value">{{userDetails.basic.email_address}}</div>
+				  	  </div>
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+			      		<div class="col">
+					  		<div class="col_label">Mobile:</div>
+						  <div class="col_value">{{userDetails.basic.contact_no}}</div>
+				  	  	</div> 
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+			      		<div class="col">
+						  <div class="col_label">Gender:</div>
+						  <div class="col_value">{{userDetails.basic.gender}}</div>
+						  </div>
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+			      	<div class="col">
+						  <div class="col_label">Father`s Name:</div>
+						  <div class="col_value">{{userDetails.basic.father_name}}</div>
+						  </div>
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+			      		<div class="col">
+						  <div class="col_label">Mother`s Name:</div>
+						  <div class="col_value">{{userDetails.basic.mother_name}}</div>
+						  </div>
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+			      	<div class="col">
+						  <div class="col_label">Guardian`s Name:</div>
+						  <div class="col_value">{{userDetails.basic.guardian}}</div>
+						  </div>
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+			      		<div class="col">
+						  <div class="col_label">Parent's Occup.:</div>
+						  <div class="col_value">{{userDetails.basic.occupation}}</div>
+					    </div>	  
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+			      	<div class="col">
+						  <div class="col_label">Annual Income:</div>
+						  <div class="col_value">{{userDetails.basic.annual_income}}</div>
+						  </div>
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+			      	<div class="col">
+						  <div class="col_label">Category:</div>
+						  <div class="col_value">{{userDetails.basic.cast_g}}</div>
+						  </div>
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+			      	<div class="col">
+						  <div class="col_label">Religion:</div>
+						  <div class="col_value">{{userDetails.basic.religion}}</div>
+						  </div>
+					</div>
+			    </li>
+			    
+			    <li class="item">
+			      	<div class="row">
+			      	<div class="col">
+						  <div class="col_label">Nationality:</div>
+						  <div class="col_value">{{userDetails.basic.nationality}}</div>
+						  </div>
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+			      	<div class="col">
+						  <div class="col_label">Area Type:</div>
+						  <div class="col_value">{{userDetails.basic.area_type}}</div>
+						  </div>
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+				      	<div class="col">
+							  <div class="col_label">Domicile:</div>
+							  <div class="col_value">{{userDetails.basic.domicile}}</div>
+						</div>
+					</div>
+			    </li>
+			    <li class="item" ng-if="userDetails.basic.voterid != 'N'">
+			      	<div class="row">
+				      	<div class="col">
+							  <div class="col_label">Voter Card:</div>
+							  <div class="col_value">{{userDetails.basic.voter_id_no}}</div>
+						</div>
+					</div>
+			    </li>
+			    <li class="item" ng-if="userDetails.basic.adhar_card_status != 'No'">
+			      	<div class="row">
+			      		<div class="col">
+						  <div class="col_label">Aadhar Card:</div>
+						  <div class="col_value">{{userDetails.basic.aadharcard_no}}</div>
+						</div>
+					</div>
+			    </li>
+			    <li class="item" ng-if="userDetails.basic.bpl_card_status != 'N'">
+			      	<div class="row">
+			      	<div class="col">
+						  <div class="col_label">BPL Card:</div>
+						  <div class="col_value">{{userDetails.basic.bplcard_no}}</div>
+						  </div>
+					</div>
+			    </li>
+			    <li class="item" ng-if="userDetails.basic.ration_card_status != 'N'">
+			      	<div class="row">
+			      	<div class="col">
+						  <div class="col_label">Ration Card:</div>
+						  <div class="col_value">{{userDetails.basic.rationcard_no}}</div>
+						  </div>
+					</div>
+			    </li>
+			    
+			</ul>
+		</ion-content> 
+	</ion-tab>
+	<ion-tab title="Address" icon="icon ion-at">
+		<ion-content has-header="false" padding="true">
+			<div>
+				<div class="row">
+					<div class="col list_section">Correspondence Address</div>
+				</div>
+			</div>
+			<ul class="list">
+				<li class="item">
+			      	<div class="row">
+			      	<div class="col">
+						  <div class="col_label">House No. / Colony:</div>
+						  <div class="col_value">{{userDetails.contact.stu_chouseno}}</div>
+					</div>
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+			      		<div class="col">
+						  <div class="col_label">Village / Ward :</div>
+						  <div class="col_value">{{userDetails.contact.stu_ccolony}}</div>
+						</div>
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+			      		<div class="col">
+						  <div class="col_label">Post-Office:</div>
+						  <div class="col_value">{{userDetails.contact.stu_cpostoffice}}</div>
+						</div>
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+			      		<div class="col">
+						  <div class="col_label">Gram Panchayat / Town:</div>
+						  <div class="col_value">{{userDetails.contact.stu_cward}}</div>
+						</div>
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+			      		<div class="col">
+						  <div class="col_label">Tehsil:</div>
+						  <div class="col_value">{{userDetails.contact.stu_ctehsil}}</div>
+						</div>
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+			      		<div class="col">
+						  <div class="col_label">District:</div>
+						  <div class="col_value">{{userDetails.contact.stu_cdistrict}}</div>
+						</div>
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+			      		<div class="col">
+						  <div class="col_label">State:</div>
+						  <div class="col_value">{{userDetails.contact.stu_cstate}}</div>
+						</div>
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+			      		<div class="col">
+						  <div class="col_label">Pin Code:</div>
+						  <div class="col_value">{{userDetails.contact.stu_cpincode}}</div>
+						</div>
+					</div>
+			    </li>
+			 </ul>
+			 <div>
+				<div class="row">
+					<div class="col list_section">Permanent Address</div>
+				</div>
+			 </div>
+			 <ul class="list">
+				<li class="item">
+			      	<div class="row">
+			      		<div class="col">
+						  <div class="col_label">House No. / Colony:</div>
+						  <div class="col_value">{{userDetails.contact.stu_phouseno}}</div>
+						  </div>
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+			      	<div class="col">
+						  <div class="col_label">Village / Ward :</div>
+						  <div class="col_value">{{userDetails.contact.stu_pcolony}}</div>
+					</div>
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+			      		<div class="col">
+						  <div class="col_label">Post-Office:</div>
+						  <div class="col_value">{{userDetails.contact.stu_ppostoffice}}</div>
+						</div>
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+			      		<div class="col">
+						  <div class="col_label">Gram Panchayat / Town:</div>
+						  <div class="col_value">{{userDetails.contact.stu_pward}}</div>
+						</div>
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+			      		<div class="col">
+						  <div class="col_label">Tehsil:</div>
+						  <div class="col_value">{{userDetails.contact.stu_ptehsil}}</div>
+						</div>
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+			      		<div class="col">
+						  <div class="col_label">District:</div>
+						  <div class="col_value">{{userDetails.contact.stu_pdistrict}}</div>
+						</div>
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+			      		<div class="col">
+						  <div class="col_label">State:</div>
+						  <div class="col_value">{{userDetails.contact.stu_pstate}}</div>
+						</div>
+					</div>
+			    </li>
+			    <li class="item">
+			      	<div class="row">
+			      		<div class="col">
+						  <div class="col_label">Pin Code:</div>
+						  <div class="col_value">{{userDetails.contact.stu_ppincode}}</div>
+						</div>
+					</div>
+			    </li>
+			</ul>
+		</ion-content> 
+	</ion-tab>
+	<ion-tab title="Acadmic" icon="icon ion-trophy">
+		<ion-content has-header="false" padding="true">
+			<div>
+				<div class="row">
+					<div class="col list_section">Academic Qualification</div>
+				</div>
+			</div>
+			<ul class="list">
+				<li class="item" ng-repeat="course in userDetails.academic" ng-if="course.roll_no != ''">
+					<div class="row">
+				      	<div class="col tab_col">
+							  <div class="tab_label">Exam Passed:</div>
+							  <div class="tab_value">{{course.course_type}}</div>
+						</div>
+					</div>
+				    <div class="row">
+				      	<div class="col tab_col">
+				      		<div class="tab_label">Board/Univ.:</div>
+				      		<div class="tab_value">{{course.board}}</div>
+						</div>
+					</div>
+				    <div class="row">
+				      	<div class="col tab_col">
+				      		<div class="tab_label">Roll No:</div>
+				      		<div class="tab_value">{{course.roll_no}}</div>
+						</div>
+					</div>
+				    <div class="row">
+				      	<div class="col tab_col">
+				      		<div class="tab_label">Year:</div>
+				      		<div class="tab_value">{{course.passing_year}}</div>
+						</div>
+					</div>
+				    <div class="row">
+				      	<div class="col tab_col">
+				      		<div class="tab_label">Max. Marks:</div>
+				      		<div class="tab_value">{{course.max_marks}}</div>
+						</div>
+					</div>
+				    <div class="row">
+				      	<div class="col tab_col">
+				      		<div class="tab_label">Obt. Marks:</div>
+				      		<div class="tab_value">{{course.obt_marks}}</div>
+						</div>
+					</div>
+				    <div class="row">
+				      	<div class="col tab_col">
+							<div class="tab_label">Percentage:</div>
+				      		<div class="tab_value">{{course.percentage}}</div>
+						</div>
+					</div>
+				    <div class="row">
+				      	<div class="col tab_col">
+				      		<div class="tab_label">Subject:</div>
+				      		<div class="tab_value">{{course.subject}}</div>
+						</div>
+					</div>
+			    </li>
+			    <li class="item" ng-if="userDetails.academic.length == 0">
+			      	<div class="col no_record">No record to display</div>
+			    </li>
+			</ul>
+		    <div>
+				<div class="row">
+					<div class="col list_section">College Academic</div>
+				</div>
+			</div>
+			<ul class="list">
+				<li class="item" ng-repeat="college_academic in userDetails.college_academic" ng-if="college_academic.uni_roll_no != ''">
+					<div class="row">
+				      	<div class="col tab_col">
+							  <div class="tab_label">Semester:</div>
+							  <div class="tab_value">{{college_academic.semester}}</div>
+						</div>
+					</div>
+					<div class="row">
+				      	<div class="col tab_col">
+							  <div class="tab_label">Appearing On:</div>
+							  <div class="tab_value">{{college_academic.appering_on}}</div>
+						</div>
+					</div>
+					<div class="row">
+				      	<div class="col tab_col">
+							  <div class="tab_label">Uni. Roll No:</div>
+							  <div class="tab_value">{{college_academic.uni_roll_no}}</div>
+						</div>
+					</div>
+					<div class="row">
+				      	<div class="col tab_col">
+							  <div class="tab_label">DMC No.:</div>
+							  <div class="tab_value">{{college_academic.dmc_no}}</div>
+						</div>
+					</div>
+					<div class="row">
+				      	<div class="col tab_col">
+							  <div class="tab_label">Max. Marks:</div>
+							  <div class="tab_value">{{college_academic.toatlmaxmarks}}</div>
+						</div>
+					</div>
+					<div class="row">
+				      	<div class="col tab_col">
+							  <div class="tab_label">Obt. Marks:</div>
+							  <div class="tab_value">{{college_academic.totalobtain}}</div>
+						</div>
+					</div>
+					<div class="row">
+				      	<div class="col tab_col">
+							  <div class="tab_label">Passing Status:</div>
+							  <div class="tab_value">{{college_academic.passing_status}}</div>
+						</div>
+					</div>
+					<div class="row">
+				      	<div class="col tab_col">
+							  <div class="tab_label">Remark:</div>
+							  <div class="tab_value">{{college_academic.result_remarks}}</div>
+						</div>
+					</div>
+				</li>
+				<li class="item" ng-if="userDetails.college_academic.length == 0">
+			      	<div class="col no_record">No record to display</div>
+			    </li>
+			 </ul>
+		</ion-content> 
+	</ion-tab>
+</ion-tabs>
+</ion-view>

@@ -1,0 +1,28 @@
+<ion-view title="{{type}} Communication" hide-back-button="true"> <ion-nav-buttons
+	side="left">
+<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+</ion-nav-buttons> 
+<ion-content has-header="true" padding="true">
+	<div class="card" ng-show="errorBlockShow">
+		<div class="item item-text-wrap">
+			<ul>
+				<ol class="errMsg" ng-repeat="err in errorMsg">
+					{{err.msg}}
+					</li>
+			</ul>
+		</div>
+	</div>
+	<div class="list card" ng-repeat="com in communication">
+	
+		<div class="item ">
+			<span class="col_label">Purpose:</span>&nbsp;&nbsp;&nbsp;&nbsp; {{com.purpose}}
+		</div>
+	
+		<div class="item item-body" ng-bind-html="com.message"></div>
+	
+		<div class="item">
+			<span class="col_label">Sent on:</span>&nbsp;&nbsp;&nbsp;&nbsp; {{com.send_date}}
+		</div>
+	
+	</div>
+</ion-content>
